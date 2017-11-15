@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-namespace ClassLibrary1.DTO
+using DataObject.Abstract;
+namespace DataObject
 {
-    class PhongHoc
+    public class MonHoc:Thing
     {
     }
 }

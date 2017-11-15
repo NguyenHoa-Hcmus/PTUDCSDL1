@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Service.Interface
+namespace DataObject
 {
-    class GiangVien
+    public class Class1
     {
     }
 }

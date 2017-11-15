@@ -32,6 +32,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,11 +42,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="GUI\ManHinhGiangVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManHinhGiangVien.Designer.cs">
+      <DependentUpon>ManHinhGiangVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ManHinhMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManHinhMonHoc.Designer.cs">
+      <DependentUpon>ManHinhMonHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ManHinhPhongHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManHinhPhongHoc.Designer.cs">
+      <DependentUpon>ManHinhPhongHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ManHinhThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManHinhThietBi.Designer.cs">
+      <DependentUpon>ManHinhThietBi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ControlUser\" />
-    <Folder Include="GUI\" />
+    <Folder Include="UserControl\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

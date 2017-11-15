@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0DCAF660-1CD0-4196-8D2E-703842B06D6B}</ProjectGuid>
+    <ProjectGuid>{4A840AC9-F879-457F-A997-0076A3B7F88B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Service</RootNamespace>
-    <AssemblyName>Service</AssemblyName>
+    <RootNamespace>DataObject</RootNamespace>
+    <AssemblyName>DataObject</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,26 +39,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Implements\GiangVienService.cs" />
-    <Compile Include="Implements\MonHocService.cs" />
-    <Compile Include="Implements\PhongHocService.cs" />
-    <Compile Include="Implements\ThietBiService.cs" />
-    <Compile Include="Interface\IGiangVien.cs" />
-    <Compile Include="Interface\IMonHoc.cs" />
-    <Compile Include="Interface\IPhongHoc.cs" />
-    <Compile Include="Interface\IThietBi.cs" />
+    <Compile Include="Abstract\Person.cs" />
+    <Compile Include="Abstract\Thing.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="DTO\GiangVien.cs" />
+    <Compile Include="DTO\MonHoc.cs" />
+    <Compile Include="DTO\PhongHoc.cs" />
+    <Compile Include="DTO\ThietBi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
-      <Project>{0638bee2-3cc0-4a2b-9710-6d2d437d52c0}</Project>
-      <Name>DataAccessLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DataObject\DataObject.csproj">
-      <Project>{4a840ac9-f879-457f-a997-0076a3b7f88b}</Project>
-      <Name>DataObject</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
