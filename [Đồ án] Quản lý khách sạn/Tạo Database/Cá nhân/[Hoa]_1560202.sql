@@ -13,10 +13,10 @@ create table LoaiPhong
 create table ChiTietPhong
 (
 	MaPhong int not null,
-	Tang int ,--check constraint(),
+	Tang int check(Tang>0),
 	DayNha char(10),
-	ThoiGianSuDungGanNhat datetime,
-	SoLanudung int,
+	ThoiGianSuDungGanNhat datetime check(ThoiGianSuDungGanNhat<=CURRENT_TIMESTAMP),
+	SoLanSudung int check(SoLanSuDung>0),
 	primary key(MaPhong)
 
 );
@@ -34,12 +34,11 @@ create table TinhTrangThietBi
 	TenTinhTrang nvarchar(100),
 	primary key(MaTinhTrang)
 );
-
 --Chi tiet thiet bi
 create table ChiTietThietBi
 (
 	MaThietBi int not null,
-	NgayMua date,
+	NgayMua date check(NgayMua<=),
 	NgaySuaChuaGanNhat date,
 	GiaTien decimal,
 	SoLanSuaChua int,
