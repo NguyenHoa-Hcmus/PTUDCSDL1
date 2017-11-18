@@ -1,9 +1,9 @@
 -- 15
 CREATE TABLE ViPham
 {
-    Ma int,
-    TenViPham nvarchar(200),
-    SoTienPhat decimal,
+    Ma int IDENTITY(1,1),
+    TenViPham nvarchar(200) not null,
+    SoTienPhat decimal check(SoTienPhat>=0),
     PRIMARY KEY (Ma)
 }
 
@@ -12,9 +12,9 @@ CREATE TABLE ChiTietKhachHang
 (
     CMND char(20),
     SoLanDatPhong int,
-    TongTien decimal,
+    TongTien decimal check(TongTien>=0),
     SoLuongNgay int,
-    SoTienPhat decimal,
+    SoTienPhat decimal check(SoTienPhat>=0),
     TongTienDichVu decimal,
     PRIMARY KEY (CMND)
 )
@@ -22,52 +22,52 @@ CREATE TABLE ChiTietKhachHang
 -- 17
 CREATE TABLE ChiTietDichVu
 (
-    MaDichVu int,
-    QuanLy int,
+    MaDichVu int IDENTITY(1,1),
+    QuanLy int not null,
     NgayLap date,
     NgayHuy date,
-    TongDoanhThu decimal,
+    TongDoanhThu decimal check(TongDoanhThu>=0),
     PRIMARY KEY (MaDichVu)
 )
 
 -- 18
 CREATE TABLE KhachHangSuDungDichVu
 (
-    MaKhachHang int,
-    MaDichVu int,
+    MaKhachHang int IDENTITY(1,1),
+    MaDichVu int not null,
     ThoiGian date,
-    DonGia int,
+    DonGia int check(DonGia>=0),
     PRIMARY KEY (MaKhachHang, MaDichVu)
 )
 
 --19
 CREATE TABLE  BoPhan
 (
-    MaBoPhan int,
+    MaBoPhan int IDENTITY(1,1),
     TenBoPhan nvarchar(200),
-    TruongBoPhan int,
-    NgayThanhLap date,
+    TruongBoPhan int not null,
+    NgayThanhLap date check(NgayThanhLap<=GETDATE()),
     PRIMARY KEY (MaBoPhan)
 )
 
 -- 20
 CREATE TABLE ChucDanh
 (
-    MaChucDanh int,
-    TenChucDanh nvarchar(200),
+    MaChucDanh int IDENTITY(1,1),
+    TenChucDanh nvarchar(200) not null,
     PRIMARY KEY (MaChucDanh)
 )
 
 -- 21
 CREATE TABLE ChiTietHoaDon
 (
-    MaHoaDon int,
-    MaPhong int,
-    GiaPhong decimal,
-    MaDichVu int,
-    GiaDichVu decimal,
-    MaThietBi int,
-    GiaThietBi decimal,
+    MaHoaDon int IDENTITY(1,1),
+    MaPhong int not null,
+    GiaPhong decimal check(GiaPhong>=0),
+    MaDichVu int not null,
+    GiaDichVu decimal check(GiaDichVu>=0),
+    MaThietBi int not null,
+    GiaThietBi decimal check(GiaThietBi>=0),
     PRIMARY KEY (MaHoaDon, MaPhong, MaDichVu, MaThietBi)
 )
 
