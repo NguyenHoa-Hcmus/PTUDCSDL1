@@ -62,7 +62,7 @@ Create table HuyPhong
 Create table NhanTraPhong
 (
 	MaPhong int not null,
-	IDKhachhang int not null,
+	IDKhachHang int not null,
 	NgayNhan date,
 	NgayTra date,
 	MaHangKiGui int,

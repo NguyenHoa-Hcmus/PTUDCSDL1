@@ -1,11 +1,11 @@
 -- 15
 CREATE TABLE ViPham
-{
+(
     Ma int,
     TenViPham nvarchar(200),
     SoTienPhat decimal,
     PRIMARY KEY (Ma)
-}
+)
 
 -- 16
 CREATE TABLE ChiTietKhachHang

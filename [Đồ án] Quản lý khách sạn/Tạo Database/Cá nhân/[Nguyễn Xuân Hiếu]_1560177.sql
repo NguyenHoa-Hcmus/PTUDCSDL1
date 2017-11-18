@@ -9,13 +9,13 @@ CREATE TABLE HangKiGui
 	MaHangKiGui int,
 	TenHangKiGui nvarchar(100),
 	SoLuong int,
-	ngayGui datetime,
+	NgayGui datetime,
 	NgayNhan datetime,
 	GhiChu nvarchar(200),
 	primary key(IDKhachHang, MaHangKiGui)
 )
 
-CREATE TABLE Datphong
+CREATE TABLE DatPhong
 (
 	IDKhachHang int,
 	MaPhong int,

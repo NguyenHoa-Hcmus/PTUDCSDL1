@@ -5,14 +5,14 @@ use QLKhachSan
 --Loai phong
 create table LoaiPhong
 (
-	MaLoaiPhong int IDENTITY(1,1)not null,
+	MaLoaiPhong int IDENTITY(1,1),
 	TenLoaiPhong nvarchar(100),
 	primary key(MaLoaiPhong)
 );
 -- Chi tiet phong
 create table ChiTietPhong
 (
-	MaPhong int not null,
+	MaPhong int,
 	Tang int check(Tang>0),
 	DayNha char(10),
 	ThoiGianSuDungGanNhat datetime check(ThoiGianSuDungGanNhat<=CURRENT_TIMESTAMP),
@@ -23,34 +23,34 @@ create table ChiTietPhong
 --TinhTrangPhong
 create table TinhTrangPhong
 (
-	MaTinhTrang int IDENTITY(1,1) not null ,
+	MaTinhTrang int IDENTITY(1,1),
 	TenTinhTrang nvarchar(100),
 	primary key(MaTinhTrang)
 );
 --Tinh trang thiet bi
 create table TinhTrangThietBi
 (
-	MaTinhTrang int IDENTITY(1,1) not null,
+	MaTinhTrang int IDENTITY(1,1),
 	TenTinhTrang nvarchar(100),
 	primary key(MaTinhTrang)
 );
 --Chi tiet thiet bi
 create table ChiTietThietBi
 (
-	MaThietBi int not null,
-	NgayMua date check(NgayMua<=),
+	MaThietBi int,
+	NgayMua date check(NgayMua<=) not null,
 	NgaySuaChuaGanNhat date,
-	GiaTien decimal,
+	GiaTien decimal not null,
 	SoLanSuaChua int,
-	HanBaoHanh date,
+	HanBaoHanh date not null,
 	primary key(MaThietBi)
 );
 
 --Phan cong
 create table PhanCong
 (
-	MaPhanCong int IDENTITY(1,1)not null,
-	MaNhanVien int not null,
+	MaPhanCong int IDENTITY(1,1),
+	MaNhanVien int,
 	ThoiGianPhanCong datetime,
 	MaCongViec int,
 	ThoiGianBatDau datetime,
@@ -62,7 +62,7 @@ create table PhanCong
 --Cong viec
 create table CongViec
 (
-	MaCongViec int IDENTITY(1,1)not null,
+	MaCongViec int IDENTITY(1,1),
 	MaBoPhan int,
 	TenCongViec nvarchar(200),
 	ThoiGianBatDau datetime,
@@ -72,3 +72,5 @@ create table CongViec
 	primary key(MaCongViec,MaBoPhan),
 
 );
+ALTER TABLE PhanCong ADD CONSTRAINT FK_PHANCONG_NHANVIEN FOREIGN KEY(MaNhanVien) REFERENCES NhanVien(MaNhanVien)
+ALTER TABLE CongViec ADD CONSTRAINT FK_CONGVIEC_BOPHAN FOREIGN KEY(MaBoPhan) REFERENCES BoPhan(MaBoPhan)
