@@ -329,9 +329,9 @@ ALTER TABLE NhanTraPhong
 ADD CONSTRAINT FK_NhanTraPhong_KhachHang
 FOREIGN KEY(IDKhachHang) REFERENCES KhachHang(IDKhachHang)
 
-ALTER TABLE NhanTraPhong
-ADD CONSTRAINT FK_NhanTraPhong_HangKiGui
-FOREIGN KEY(MaHangKiGui) REFERENCES HangKiGui(MaHangKiGui)
+--ALTER TABLE NhanTraPhong
+--ADD CONSTRAINT FK_NhanTraPhong_HangKiGui
+--FOREIGN KEY(MaHangKiGui) REFERENCES HangKiGui(MaHangKiGui)
 
 ALTER TABLE HangKiGui ADD CONSTRAINT
 FK_HangKiGui_KhachHang FOREIGN KEY(IDKHachHang)
