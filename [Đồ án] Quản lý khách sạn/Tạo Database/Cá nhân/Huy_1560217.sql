@@ -1,16 +1,9 @@
 -- 15
-CREATE TABLE ViPham
-<<<<<<< HEAD
+create table ViPham
 (
-    Ma int,
-    TenViPham nvarchar(200),
-    SoTienPhat decimal,
-=======
-{
     Ma int IDENTITY(1,1),
     TenViPham nvarchar(200) not null,
     SoTienPhat decimal check(SoTienPhat>=0),
->>>>>>> d0e3d5732d2664e80dc038b03983816b57134faa
     PRIMARY KEY (Ma)
 )
 
