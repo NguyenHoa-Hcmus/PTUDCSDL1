@@ -5,76 +5,76 @@ use QLKS
 go 
 CREATE TABLE HangKiGui
 (
-	IDKhachHang int,
-	MaHangKiGui int,
+	IDKhachHang int not null,
+	MaHangKiGui int not null,
 	TenHangKiGui nvarchar(100),
-	SoLuong int,
+	SoLuong int check(SoLuong >= 0),
 	NgayGui datetime,
 	NgayNhan datetime,
 	GhiChu nvarchar(200),
-	primary key(IDKhachHang, MaHangKiGui)
+	PRIMARY KEY(IDKhachHang, MaHangKiGui)
 )
 
 CREATE TABLE DatPhong
 (
-	IDKhachHang int,
-	MaPhong int,
-	CMNDKhachHang char(12),
+	IDKhachHang int not null,
+	MaPhong int not null,
+	CMNDKhachHang char(12) not null,
 	NgayDatPhong date,
-	SoLuongNguoi int,
+	SoLuongNguoi int check(SoLuongNguoi >= 0),
 	NgayNhanPhong date,
 	NgayTraPhong date,
-	primary key(IDKhachHang, MaPhong)
+	PRIMARY KEY(IDKhachHang, MaPhong)
 )
 
 CREATE TABLE BanGiamDoc
 (
-	MaGiamDoc int,
-	TenGiamDoc nvarchar(100),
+	MaGiamDoc int not null,
+	TenGiamDoc nvarchar(100) not null,
 	MaChucDanh int,
 	NgayNhanChuc date,
-	Luong decimal,
+	Luong decimal check(Luong >= 0),
 	GhiChu nvarchar(200),
-	primary key(MaGiamDoc),
+	PRIMARY KEY(MaGiamDoc)
 )
 
 CREATE TABLE NhanVien
 (
-	MaNhanVien int,
-	HoTen nvarchar(100),
-	CMND char(12),
-	Luong decimal,
+	MaNhanVien int not null,
+	HoTen nvarchar(100) not null,
+	CMND char(12) not null,
+	Luong decimal check(Luong >= 0),
 	SDT char(12),
 	MaChucDanh int,
 	MaBoPhan int,
 	GioiTinh nvarchar(5),
-	primary key(MaNhanVien),
+	PRIMARY KEY(MaNhanVien)
 )
 
 CREATE TABLE TaiKhoan
 (
-	TenTaiKhoan varchar(100),
-	MatKhau varchar(100),
+	TenTaiKhoan varchar(100) not null,
+	MatKhau varchar(100) not null,
 	SoLanDangNhap int,
-	primary key(TenTaiKhoan),
+	PRIMARY KEY(TenTaiKhoan)
 )
 
 CREATE TABLE ChiTietNhanVien
 (
-	MaNhanVien int,
+	MaNhanVien int not null,
 	DiaChi nvarchar(200),
 	NgayBatDauLam datetime,
 	GhiChu nvarchar(200),
-	primary key(MaNhanVien),
+	PRIMARY KEY(MaNhanVien)
 )
 
 CREATE TABLE NhanVienViPham
 (
-	MaNhanVien int,
+	MaNhanVien int not null,
 	MaViPham int,
 	Ngay date,
-	Solan int,
-	primary key(MaNhanVien, MaViPham)
+	Solan int check(SoLan >= 0),
+	PRIMARY KEY(MaNhanVien, MaViPham)
 )
 
 ALTER TABLE HangKiGui ADD CONSTRAINT
@@ -112,3 +112,11 @@ REFERENCES BoPhan(MaBoPhan)
 ALTER TABLE ChiTietNhanVien ADD CONSTRAINT
 fk_ChiTietNhanVien_NhanVien FOREIGN KEY(MaNhanVien)
 REFERENCES NhanVien(MaNhanVien)
+
+ALTER TABLE NhanVienViPham ADD CONSTRAINT
+fk_NhanVienViPham_NhanVien FOREIGN KEY(MaNhanVien)
+REFERENCES NhanVien(MaNhanVien)
+
+ALTER TABLE NhanVienViPham ADD CONSTRAINT
+fk_NhanVienViPham_ViPham FOREIGN KEY(MaViPham)
+REFERENCES ViPham(MaViPham)
