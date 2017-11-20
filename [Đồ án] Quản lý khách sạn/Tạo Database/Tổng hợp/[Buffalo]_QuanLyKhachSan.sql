@@ -68,7 +68,7 @@ Create table NhanTraPhong
 	IDKhachHang int not null,
 	NgayNhan date check(NgayNhan<=cast(CURRENT_TIMESTAMP as date)),
 	NgayTra date check(NgayTra<=cast(CURRENT_TIMESTAMP as date)),
-	MaHangKiGui int,
+	MaHangKiGui int unique,
 	GhiChu nvarchar(200),
 	Primary key(MaPhong, IDKhachhang)
 )
@@ -82,7 +82,7 @@ CREATE TABLE HangKiGui
 	NgayGui datetime check(NgayGui<=CURRENT_TIMESTAMP),
 	NgayNhan datetime check (NgayNhan<=CURRENT_TIMESTAMP),
 	GhiChu nvarchar(200),
-	primary key(IDKhachHang, MaHangKiGui)
+	primary key(MaHangKiGui)
 )
 
 CREATE TABLE DatPhong
@@ -329,9 +329,9 @@ ALTER TABLE NhanTraPhong
 ADD CONSTRAINT FK_NhanTraPhong_KhachHang
 FOREIGN KEY(IDKhachHang) REFERENCES KhachHang(IDKhachHang)
 
---ALTER TABLE NhanTraPhong
---ADD CONSTRAINT FK_NhanTraPhong_HangKiGui
---FOREIGN KEY(MaHangKiGui) REFERENCES HangKiGui(MaHangKiGui)
+ALTER TABLE NhanTraPhong
+ADD CONSTRAINT FK_NhanTraPhong_HangKiGui
+FOREIGN KEY(MaHangKiGui) REFERENCES HangKiGui(MaHangKiGui)
 
 ALTER TABLE HangKiGui ADD CONSTRAINT
 FK_HangKiGui_KhachHang FOREIGN KEY(IDKHachHang)
