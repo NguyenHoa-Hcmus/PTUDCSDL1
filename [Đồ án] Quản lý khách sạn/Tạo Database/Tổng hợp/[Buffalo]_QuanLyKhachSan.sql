@@ -68,28 +68,28 @@ Create table NhanTraPhong
 	IDKhachHang int not null,
 	NgayNhan date check(NgayNhan<=cast(CURRENT_TIMESTAMP as date)),
 	NgayTra date check(NgayTra<=cast(CURRENT_TIMESTAMP as date)),
-	MaHangKiGui int,
+	MaHangKiGui int unique,
 	GhiChu nvarchar(200),
 	Primary key(MaPhong, IDKhachhang)
 )
 
 CREATE TABLE HangKiGui
 (
-	IDKhachHang int,
+	IDKhachHang int not null,
 	MaHangKiGui int,
-	TenHangKiGui nvarchar(100),
+	TenHangKiGui nvarchar(100) not null,
 	SoLuong int,
 	NgayGui datetime check(NgayGui<=CURRENT_TIMESTAMP),
 	NgayNhan datetime check (NgayNhan<=CURRENT_TIMESTAMP),
 	GhiChu nvarchar(200),
-	primary key(IDKhachHang, MaHangKiGui)
+	primary key(MaHangKiGui)
 )
 
 CREATE TABLE DatPhong
 (
 	IDKhachHang int,
 	MaPhong int,
-	CMNDKhachHang char(20),
+--	CMNDKhachHang char(20),
 	NgayDatPhong date check(NgayDatPhong<=cast(CURRENT_TIMESTAMP as DATE)),
 	SoLuongNguoi int check(SoLuongNguoi>0),
 	NgayNhanPhong date ,
@@ -111,7 +111,7 @@ CREATE TABLE BanGiamDoc
 CREATE TABLE NhanVien
 (
 	MaNhanVien int IDENTITY(1,1),
-	HoTen nvarchar(100),
+	HoTen nvarchar(100) not null,
 	CMND char(12) not null unique,
 	Luong decimal check(Luong>0),
 	SDT char(12)unique,
@@ -345,13 +345,13 @@ ALTER TABLE DatPhong ADD CONSTRAINT
 FK_DatPhong_Phong FOREIGN KEY(MaPhong)
 REFERENCES Phong(MaPhong)
 
-ALTER TABLE DatPhong ADD CONSTRAINT
-FK_DatPhong_KhanhHang FOREIGN KEY(CMNDKhachHang)
-REFERENCES KhachHang(CMND)
+--ALTER TABLE DatPhong ADD CONSTRAINT
+--FK_DatPhong_KhanhHang FOREIGN KEY(CMNDKhachHang)
+--REFERENCES KhachHang(CMND)
 
-ALTER TABLE BanGiamDoc ADD CONSTRAINT
-FK_BanGiamDoc_NhanVien FOREIGN KEY(MaGiamDoc)
-REFERENCES NhanVien(MaNhanVien)
+--ALTER TABLE BanGiamDoc ADD CONSTRAINT
+--FK_BanGiamDoc_NhanVien FOREIGN KEY(MaGiamDoc)
+--REFERENCES NhanVien(MaNhanVien)
 
 ALTER TABLE BanGiamDoc ADD CONSTRAINT
 FK_BanGiamDoc_ChucDanh FOREIGN KEY(MaChucDanh)
