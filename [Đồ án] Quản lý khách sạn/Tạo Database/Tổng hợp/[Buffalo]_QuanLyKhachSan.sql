@@ -287,8 +287,24 @@ create table CongViec
 	primary key(MaCongViec,MaBoPhan),
 
 )
+--Thong bao
+Create table ThongBao
+(
+	MaThongBao int IDENTITY(1,1),
+	NoiDungThongBao nvarchar(200),
+	NgayThongBao date,
+	NgayHetThongBao date,
+	MaNguoiTaoThongBao int,
+	--DoiTuongNhanThongBao ,
+	primary key(MaThongBao)
+	
+)
 
 go
+ALTER TABLE ThongBao
+ADD CONSTRAINT FK_ThongBao_NhanVien
+FOREIGN KEY(MaNguoiTao) REFERENCES NhanVien(MaNhanVien) 
+
 ALTER TABLE Phong 
 ADD CONSTRAINT FK_Phong_LoaiPhong 
 FOREIGN KEY(LoaiPhong) REFERENCES LoaiPhong(MaLoaiPhong)
