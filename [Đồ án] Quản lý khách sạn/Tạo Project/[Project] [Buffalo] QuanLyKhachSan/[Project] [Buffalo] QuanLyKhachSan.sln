@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataObject", "DataObject\Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{C70345ED-C93C-432B-BC64-50C1A3500284}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyKhachSanGUI", "QuanLyKhachSanGUI\QuanLyKhachSanGUI.csproj", "{90FE9923-48D9-43AA-8925-6D5A074BDC02}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyKhachSanGUI", "QuanLyKhachSanGUI\QuanLyKhachSanGUI.csproj", "{1E02567C-C4A6-4BF0-9F98-780C0C011DA5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{C70345ED-C93C-432B-BC64-50C1A3500284}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C70345ED-C93C-432B-BC64-50C1A3500284}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C70345ED-C93C-432B-BC64-50C1A3500284}.Release|Any CPU.Build.0 = Release|Any CPU
-		{90FE9923-48D9-43AA-8925-6D5A074BDC02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{90FE9923-48D9-43AA-8925-6D5A074BDC02}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{90FE9923-48D9-43AA-8925-6D5A074BDC02}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{90FE9923-48D9-43AA-8925-6D5A074BDC02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E02567C-C4A6-4BF0-9F98-780C0C011DA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E02567C-C4A6-4BF0-9F98-780C0C011DA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E02567C-C4A6-4BF0-9F98-780C0C011DA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E02567C-C4A6-4BF0-9F98-780C0C011DA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

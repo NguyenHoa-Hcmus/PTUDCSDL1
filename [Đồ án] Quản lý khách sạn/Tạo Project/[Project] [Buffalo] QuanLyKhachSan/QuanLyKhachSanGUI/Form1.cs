@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLyKhachSanGUI.GUI
+namespace QuanLyKhachSanGUI
 {
-    public partial class ManHinhHoaDon : Form
+    public partial class Form1 : Form
     {
-        public ManHinhHoaDon()
+        public Form1()
         {
             InitializeComponent();
         }
