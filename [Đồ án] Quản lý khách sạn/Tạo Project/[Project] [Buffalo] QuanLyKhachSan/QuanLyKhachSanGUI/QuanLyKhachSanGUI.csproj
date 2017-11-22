@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{90FE9923-48D9-43AA-8925-6D5A074BDC02}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QuanLyKhachSanGUI</RootNamespace>
+    <AssemblyName>QuanLyKhachSanGUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="GUI\ManHinhBanGiamDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManHinhBanGiamDoc.Designer.cs">
+      <DependentUpon>ManHinhBanGiamDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ManHinhBoPhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManHinhBoPhan.Designer.cs">
+      <DependentUpon>ManHinhBoPhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ManHinhCongViec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManHinhCongViec.Designer.cs">
+      <DependentUpon>ManHinhCongViec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ManHinhDatPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManHinhDatPhong.Designer.cs">
+      <DependentUpon>ManHinhDatPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ManHinhDichVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManHinhDichVu.Designer.cs">
+      <DependentUpon>ManHinhDichVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ManHinhHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManHinhHoaDon.Designer.cs">
+      <DependentUpon>ManHinhHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ManHinhHuyPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManHinhHuyPhong.Designer.cs">
+      <DependentUpon>ManHinhHuyPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ManHinhKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManHinhKhachHang.Designer.cs">
+      <DependentUpon>ManHinhKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ManHinhNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManHinhNhanVien.Designer.cs">
+      <DependentUpon>ManHinhNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ManHinhPhanCong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManHinhPhanCong.Designer.cs">
+      <DependentUpon>ManHinhPhanCong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ManHinhPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManHinhPhong.Designer.cs">
+      <DependentUpon>ManHinhPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ManHinhTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManHinhTaiKhoan.Designer.cs">
+      <DependentUpon>ManHinhTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ManHinhThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManHinhThietBi.Designer.cs">
+      <DependentUpon>ManHinhThietBi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ManHinhNhanTraPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManHinhNhanTraPhong.Designer.cs">
+      <DependentUpon>ManHinhNhanTraPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ManHinhThongBao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManHinhThongBao.Designer.cs">
+      <DependentUpon>ManHinhThongBao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ManHinhViPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManHinhViPham.Designer.cs">
+      <DependentUpon>ManHinhViPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UserControl\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
