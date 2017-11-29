@@ -10,7 +10,6 @@ namespace Service.Interface
     {
         int ThemBoPhan(BoPhan bp);
         int CapNhatBoPhan(BoPhan bp);
-        int NhapDuLieuTuFile(string FileName);
         int XoaBoPhan(int maBP);
     }
 }

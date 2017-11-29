@@ -10,7 +10,6 @@ namespace Service.Interface
     {
         int ThemCongViec(CongViec Cv);
         int CapNhatCongViec(CongViec Cv);
-        int NhapDuLieuTuFile(string FileName);
         int XoaCongViec(int MaCv);
     }
 }

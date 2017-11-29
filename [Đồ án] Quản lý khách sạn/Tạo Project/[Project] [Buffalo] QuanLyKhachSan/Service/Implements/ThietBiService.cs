@@ -24,8 +24,7 @@ namespace Service.Implements
         {
             throw new NotImplementedException();
         }
-
-        public int NhapTuFile(string tenFile)
+        public int ThemNgaySuaChua(DateTime ngaySuaChua)
         {
             throw new NotImplementedException();
         }

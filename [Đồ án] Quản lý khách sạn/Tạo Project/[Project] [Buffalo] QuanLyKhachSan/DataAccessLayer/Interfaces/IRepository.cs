@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Interfaces
 {
-    public interface IRepository
+    public interface IRepository<T>
     {
-        int Them(Object obj);
-        int Xoa(Object obj);
-        int CapNhat(Object obj);
-        Object LuaChon();
+        int Them(T t);
+        int Xoa(T t);
+        int CapNhat(T t);
+        Object Xem(T t);
     }
 }

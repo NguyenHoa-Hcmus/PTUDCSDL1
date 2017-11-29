@@ -11,6 +11,6 @@ namespace Service.Interface
         int ThemThietBi(ThietBi tb);
         int XoaThietBi(int maThietBi);
         int CapNhatThongTinThietBi(ThietBi tb);
-        int NhapTuFile(string tenFile);
+        int ThemNgaySuaChua(DateTime ngaySuaChua);
     }
 }

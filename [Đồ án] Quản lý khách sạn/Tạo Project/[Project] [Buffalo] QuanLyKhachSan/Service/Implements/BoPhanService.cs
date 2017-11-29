@@ -19,12 +19,6 @@ namespace Service.Implements
         {
             throw new NotImplementedException();
         }
-
-        public int NhapDuLieuTuFile(string FileName)
-        {
-            throw new NotImplementedException();
-        }
-
         public int XoaBoPhan(int maBP)
         {
             throw new NotImplementedException();
